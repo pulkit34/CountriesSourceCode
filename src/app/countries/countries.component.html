@@ -1,0 +1,38 @@
+<div class="container">
+  <div class="row" id="back" style="text-align:center; padding:5%;">
+    <div class="col-md-12">
+    <h1><span style= "color:whitesmoke"><b>Countries</b></span></h1>
+    </div>
+    </div>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light "  style=" margin-bottom:6%">
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup"
+          aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+          <div class="navbar-nav">
+            <a class="nav-item nav-link" [routerLink]="['/home']">Home</a>
+            <a class="nav-item nav-link" [routerLink]="['/region']">Regions</a>
+            <a class="nav-item nav-link" [routerLink]="['/coun']">All Countries</a>
+          </div>
+        </div>
+      </nav>
+    <div class="row" *ngIf="countries.length>0">
+    <div class="col-md-4"  *ngFor="let i of countries;">
+        <div class="card" style="width: 18rem; margin-bottom:6%;">
+            <img class="card-img-top img-thumbnail" src="{{i.flag}}" alt="flag">
+            <div class="card-body">
+              <p class="card-title" style="border-bottom:1px solid"><b>{{i.name}}</b></p>
+              <p class="card-text">{{i.region}}</p>
+              <button class="btn bg-dark" [routerLink]="['/country',i.name]"><span style="color:whitesmoke">Visit</span></button>
+            </div>
+          </div>
+            
+
+  </div>
+  </div>
+ 
+
+
+    </div>
+
